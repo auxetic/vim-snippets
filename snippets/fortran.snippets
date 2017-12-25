@@ -5,10 +5,13 @@ snippet p
 	end program
 snippet mod
 	module ${1:modulename}
+		implicit none
 		$0
 	contains
 
 	end module
+snippet im
+	implicit none
 snippet ass
 	associate( $0 )
 		$1
@@ -26,7 +29,7 @@ snippet ii
 snippet rr
 	real(8)
 snippet aa
-	allocatable, 
+	allocatable,
 snippet di
 	dimension($0:)
 snippet all
@@ -35,14 +38,12 @@ snippet pa
 	parameter
 snippet str
 	character(250) :: $0
-# Types
 snippet type
 	type(${1:name})
 		$0
 	end type
 snippet intent
 	intent($0:inout)
-# Array
 snippet if
 	if ( ${1:condition} ) then
 		$0
@@ -57,10 +58,12 @@ snippet dow
 	end do
 snippet sub
 	subroutine ${1:name}($2)
+		implicit none
 		$0
 	end subroutine
 snippet func
 	function ${1:name}($2) result($3)
+		implicit none
 		$0
 	end function
 snippet pr
